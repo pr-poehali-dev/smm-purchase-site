@@ -114,11 +114,34 @@ export default function Index() {
               SMM Boost
             </span>
           </div>
-          <div className="hidden md:flex items-center gap-6">
-            <a href="#services" className="text-foreground/80 hover:text-foreground transition-colors">Услуги</a>
-            <a href="#about" className="text-foreground/80 hover:text-foreground transition-colors">О нас</a>
+          <div className="hidden lg:flex items-center gap-4">
+            <Button variant="ghost" size="sm" className="hover:bg-primary/10">
+              <Icon name="Plus" size={16} className="mr-1" />
+              Новый заказ
+            </Button>
+            <Button variant="ghost" size="sm" className="hover:bg-primary/10">
+              <Icon name="Package" size={16} className="mr-1" />
+              Мои заказы
+            </Button>
+            <Button variant="ghost" size="sm" className="hover:bg-primary/10">
+              <Icon name="Layers" size={16} className="mr-1" />
+              Массовый заказ
+            </Button>
+            <Button variant="ghost" size="sm" className="hover:bg-primary/10">
+              <Icon name="User" size={16} className="mr-1" />
+              Профиль
+            </Button>
+            <Button variant="ghost" size="sm" className="hover:bg-primary/10">
+              <Icon name="Code" size={16} className="mr-1" />
+              API
+            </Button>
+            <Button variant="ghost" size="sm" className="hover:bg-primary/10">
+              <Icon name="BookOpen" size={16} className="mr-1" />
+              Блог
+            </Button>
             <Button className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity">
-              Войти
+              <Icon name="Headphones" size={16} className="mr-1" />
+              Поддержка
             </Button>
           </div>
         </div>
@@ -144,6 +167,35 @@ export default function Index() {
               <Icon name="PlayCircle" size={20} className="mr-2" />
               Как это работает
             </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 px-4 bg-muted/20">
+        <div className="container mx-auto">
+          <h3 className="text-2xl font-bold text-center mb-8 text-foreground">Выберите соцсеть</h3>
+          <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-10 gap-4 mb-12">
+            {[
+              { name: 'Likee', icon: 'Heart' },
+              { name: 'OK', icon: 'Users' },
+              { name: 'VC.ru', icon: 'FileText' },
+              { name: 'DTF', icon: 'Newspaper' },
+              { name: 'Pinterest', icon: 'Image' },
+              { name: 'Wildberries', icon: 'ShoppingBag' },
+              { name: 'Steam', icon: 'Gamepad2' },
+              { name: 'Shazam', icon: 'Music' },
+              { name: 'MAX', icon: 'Video' },
+              { name: 'Трафик', icon: 'TrendingUp' }
+            ].map((social, idx) => (
+              <Button
+                key={idx}
+                variant="outline"
+                className="h-20 flex flex-col items-center justify-center gap-2 hover:bg-primary/10 hover:border-primary/50 transition-all hover:scale-105"
+              >
+                <Icon name={social.icon} size={24} />
+                <span className="text-xs">{social.name}</span>
+              </Button>
+            ))}
           </div>
         </div>
       </section>
@@ -325,9 +377,57 @@ export default function Index() {
         )}
       </div>
 
-      <footer className="border-t border-border py-8 px-4 bg-card/50 backdrop-blur-sm">
-        <div className="container mx-auto text-center text-muted-foreground">
-          <p>© 2026 SMM Boost. Все права защищены.</p>
+      <footer className="border-t border-border py-12 px-4 bg-card/50 backdrop-blur-sm">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <div>
+              <h4 className="font-bold text-lg mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">О компании</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="#" className="hover:text-foreground transition-colors">О нас</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Контакты</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Мониторинг услуг 24/7</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Блог</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-lg mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Информация</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="#" className="hover:text-foreground transition-colors">Отзывы / Темы на форумах</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Словарь терминов</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Деньги на баланс за отзыв</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Реселлерам</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-lg mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Правовая информация</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li><a href="#" className="hover:text-foreground transition-colors">Информация о возврате средств</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Условия использования</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Политика конфиденциальности</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Пользовательское соглашение</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-lg mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Поддержка</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-center gap-2">
+                  <Icon name="Mail" size={16} />
+                  <a href="mailto:support@smmboost.ru" className="hover:text-foreground transition-colors">support@smmboost.ru</a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Icon name="MessageCircle" size={16} />
+                  <span>Онлайн-чат 24/7</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Icon name="Phone" size={16} />
+                  <a href="tel:+78001234567" className="hover:text-foreground transition-colors">8 (800) 123-45-67</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-border pt-6 text-center text-sm text-muted-foreground">
+            <p>© 2026 SMM Boost. Все права защищены.</p>
+          </div>
         </div>
       </footer>
     </div>
